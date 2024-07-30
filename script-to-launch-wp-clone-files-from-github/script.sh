@@ -8,6 +8,7 @@ cd /tmp/ && git clone https://github.com/katoch1234/wordpress-zenkins.git;
 mv wordpress-zenkins/nginx-conf/default /etc/nginx/sites-enabled/;
 mv wordpress-zenkins/* /var/www/html/;
 rm -r wordpress-zenkins;
-
-
-
+SetEnv DB_NAME wordpress;
+SetEnv DB_USER wordpress;
+SetEnv DB_PASSWORD HappyDay$2024;
+SetEnv DB_HOST 35.193.105.139;
