@@ -8,11 +8,13 @@ cd /tmp/ && git clone https://github.com/katoch1234/wordpress-zenkins.git;
 sudo mv wordpress-zenkins/nginx-conf/default /etc/nginx/sites-enabled/;
 #sudo mv wordpress-zenkins/* /var/www/html/;
 sudo apt install composer -y
-sudo chmod 777 /var/www/html/
+sudo chmod 777 /var/www/html/ && cd /var/www/html/
 composer require vlucas/phpdotenv
-sudo chmod 750 /var/www/html
+sudo find /var/www/html -type d -exec chmod 755 {} \;
+sudo find /var/www/html -type f -exec chmod 644 {} \;
+sudo chmod 600 /path/to/wordpress/wp-config.php
 sudo systemctl restart nginx
 sudo systemctl restart php8.1-fpm
-sudo rsync -av --progress wordpress-zenkins/ /var/www/html/
+sudo rsync -av --progress /tmp/wordpress-zenkins/ /var/www/html/
 sudo chown -R www-data:www-data /var/www/html/ && sudo chmod 700 /var/www/html/.env
-sudo rm -r wordpress-zenkins;
+sudo rm -r /tmp/wordpress-zenkins;
