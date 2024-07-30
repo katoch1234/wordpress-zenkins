@@ -23,13 +23,13 @@
 define( 'DB_NAME', $_ENV['DB_NAME'] );
 
 /** Database username */
-define( 'DB_USER', getenv('DB_USER'));
+define( 'DB_USER', $_ENV['DB_USER']);
 
 /** Database password */
-define( 'DB_PASSWORD', getenv ('DB_PASSWORD'));
+define( 'DB_PASSWORD', $_ENV['DB_PASSWORD']);
 
 /** Database hostname */
-define( 'DB_HOST', getenv ('DB_HOST'));
+define( 'DB_HOST', $_ENV['DB_HOST']);
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
