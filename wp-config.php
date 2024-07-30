@@ -17,6 +17,10 @@
  *
  * @package WordPress
  */
+ require_once __DIR__ . '/vendor/autoload.php';
+
+ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+ $dotenv->load();
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
